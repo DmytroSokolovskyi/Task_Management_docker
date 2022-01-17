@@ -1,0 +1,28 @@
+.modalInfoDiv {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1px;
+  }
+  h3{
+    display: block;
+    width: 30%;
+    color: rgba(5, 12, 5, 0.5);
+    text-shadow: 3px 3px 3px #61d2ec;
+    font-size: 18px;
+  }
+  span{
+    display: flex;
+    background-color: #faf7f7;
+    width: 70%;
+    min-height: 40px;
+    padding: 2px 5px;
+    align-items: center;
+  }
+}

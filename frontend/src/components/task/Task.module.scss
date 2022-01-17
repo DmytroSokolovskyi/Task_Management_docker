@@ -1,0 +1,83 @@
+.taskRow{
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.taskDiv {
+  display: flex;
+  height: 7%;
+  min-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: #f2f5f6;
+  box-shadow: 1px 1px 0 1px #5a5c5e, 5px 2px 0 1px #9fa0a1;
+  transition: all 0.3s ease-in-out 0s;
+  overflow: hidden;
+}
+
+.inactive {
+  height: 7%;
+  min-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: #f2f5f6;
+  box-shadow: 1px 1px 0 1px #5a5c5e, 5px 2px 0 1px #9fa0a1;
+  overflow: hidden;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.infoTask {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoTask span {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  font-size: 14px;
+  align-items: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+
+.taskDiv:hover {
+  min-height: 45px;
+  box-shadow: 5px 5px 5px #61d2ec;
+}
+
+.buttonsDiv {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .deleteBtn{
+    background: url('../../assets/img/icon-delete-216760.png') 3px 8px/50% 50% no-repeat;
+  }
+  .editBtn{
+    background: url('../../assets/img/icon-edit-message-1428326.png') 3px 8px/50% 50% no-repeat;
+  }
+}
+
+.buttonsDiv button{
+  height: 90%;
+  width: 40%;
+  transition: all 0.5s ease 0s;
+}
+.buttonsDiv button:hover{
+  transform: scale(1.2, 1.2);
+}
+

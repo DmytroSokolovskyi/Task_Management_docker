@@ -1,0 +1,29 @@
+.tasksDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tasksContainer {
+  width: 100%;
+  max-width: 1130px;
+}
+
+.tasksContent {
+  width: 100%;
+  display: flex;
+  transition: all 1.8s ease 1s;
+
+  .tasksList {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    padding: 10px 5px 5px 5px;
+
+    button {
+      width: 20vh;
+    }
+  }
+}

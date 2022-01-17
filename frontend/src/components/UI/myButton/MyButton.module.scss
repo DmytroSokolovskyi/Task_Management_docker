@@ -1,0 +1,50 @@
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    height: 6vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.myBtn {
+    color: #FFFFFF;
+    width: 10vh;
+    height: 4vh;
+    background-color: #2E8FF0;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.4s all ease-in-out;
+    overflow: hidden;
+}
+
+.myBtn:hover {
+    background: #288386;
+    color: #282020;
+    width: 12vh;
+    height: 4.5vh;
+    text-shadow: 2px 1px 2px #c0bdbd;
+}
+
+.buttonLine {
+    background-color: white;
+    height: 80%;
+    width: 100px;
+    position: absolute;
+    opacity: 0;
+    left: -10%;
+    transition: 0.4s all ease-in-out;
+    rotate: 135deg;
+}
+
+.buttonDiv:hover {
+    .buttonLine{
+        left: 100%;
+        opacity: 0.3;
+        height: 80%;
+        width: 100px;
+        color: #5f9d9f;
+    }
+}
