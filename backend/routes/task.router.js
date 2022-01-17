@@ -5,7 +5,6 @@ const { mainMiddleware, authMiddleware } = require('../middlewares');
 const { taskValidator, queryValidator} = require('../validators');
 const { tokenEnum } = require("../configs");
 
-
 taskRouter.get('/',
     mainMiddleware.validateQuery(queryValidator.queryValidate),
     authMiddleware.checkToken(O_Auth, tokenEnum.ACCESS),

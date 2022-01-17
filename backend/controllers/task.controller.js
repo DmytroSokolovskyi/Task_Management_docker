@@ -5,7 +5,6 @@ module.exports = {
 
     getTasks: async (req, res, next) => {
         try {
-            // todo dorobu filtra
             const tasks = await taskService.getAllTasks(req.query, req.user.id);
 
             res.status(statusEnum.OK).json(tasks);

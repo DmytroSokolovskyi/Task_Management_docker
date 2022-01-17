@@ -5,7 +5,6 @@ const {tokenEnum, actionTokenTypeEnum} = require('../configs');
 const {authController} = require('../controllers');
 const authRouter = require('express').Router();
 
-
 authRouter.get(
     '/',
     authMiddleware.checkToken(O_Auth, tokenEnum.ACCESS),

@@ -1,6 +1,5 @@
 const Joi = require("joi");
 
-
 const createTaskValidate = Joi.object({
     title: Joi
         .string()
