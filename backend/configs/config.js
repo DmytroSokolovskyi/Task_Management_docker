@@ -7,7 +7,7 @@ const DB_PORT = process.env.DB_PORT;
 module.exports = {
     NODE_ENV: process.env.NODE_ENV || 'dev',
 
-    MONGO_URL: 'mongodb://localhost:27017/Tasks' || `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+    MONGO_URL:`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
     PORT: process.env.PORT || 5000,
     HOST: process.env.HOST || '0.0.0.0',
 
@@ -19,8 +19,8 @@ module.exports = {
     EMAIL_LOGIN: process.env.EMAIL_LOGIN,
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
 
-    FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:3000',
-    ACTIVATE_URL: process.env.ACTIVATE_URL || 'http://localhost:5000/auth/activate',
+    FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost/80',
+    ACTIVATE_URL: process.env.ACTIVATE_URL || 'http://localhost/80/auth/activate',
 
     ALLOWED_ORIGIN: process.env.ALLOWED_ORIGIN || 'http://localhost:3000',
 };

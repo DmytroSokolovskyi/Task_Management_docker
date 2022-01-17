@@ -5,14 +5,16 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 require('dotenv').config();
 
-const { config, errorsEnum } = require('./configs');
-const { ErrorHandler } = require('./errors');
-const { authRouter, userRouter, taskRouter} = require('./routes');
+const {config, errorsEnum} = require('./configs');
+const {ErrorHandler} = require('./errors');
+const {authRouter, userRouter, taskRouter} = require('./routes');
 const {errorMiddleware} = require("./middlewares");
+const {HOST, PORT, MONGO_URL, ALLOWED_ORIGIN, NODE_ENV} = require("./configs/config");
+const {defaultData} = require("./util");
 
 const app = express();
 
-mongoose.connect(config.MONGO_URL);
+mongoose.connect(MONGO_URL);
 
 app.use(helmet());
 app.use(cors({origin: _configureCors}));
@@ -21,7 +23,7 @@ app.use(rateLimit({
     max: 100
 }));
 
-if (config.NODE_ENV === 'dev') {
+if (NODE_ENV === 'dev') {
     const morgan = require('morgan');
 
     app.use(morgan('dev'));
@@ -35,10 +37,12 @@ app.use('/user', userRouter);
 app.use('/task', taskRouter);
 app.use('*', errorMiddleware);
 
-app.listen(config.PORT,
-    config.HOST,
+app.listen(PORT,
+    HOST,
     () => {
-        console.log(`App work ${config.PORT}`);
+        console.log(HOST,PORT, MONGO_URL, ALLOWED_ORIGIN, NODE_ENV);
+        console.log(`App work ${PORT}`);
+        defaultData();
     });
 
 function _configureCors(origin, callback) {
@@ -47,7 +51,7 @@ function _configureCors(origin, callback) {
         return callback(null, true);
     }
 
-    const whitelist = config.ALLOWED_ORIGIN.split(';');
+    const whitelist = ALLOWED_ORIGIN.split(';');
 
     if (whitelist.includes(origin)) {
         return callback(new ErrorHandler(errorsEnum.CORS_ERROR), false);

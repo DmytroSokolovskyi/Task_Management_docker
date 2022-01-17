@@ -1,7 +1,7 @@
 import {destroyTokens, getToken, saveTokens} from "./storage.service";
 import axios from "axios";
 
-export const apiUrl = "http://localhost:5000";
+export const apiUrl = "http://localhost/api";
 export const userUrl = "/user";
 export const authUrl = "/auth";
 export const activateUrl = "/auth/activate/";
