@@ -14,7 +14,7 @@ const {defaultData} = require("./util");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://user:passwordQaz@cluster0.uewn9.mongodb.net/tasks");
+mongoose.connect(config.MONGO_URL);
 
 app.use(helmet());
 app.use(cors({origin: _configureCors}));

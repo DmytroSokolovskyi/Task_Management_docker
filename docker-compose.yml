@@ -4,14 +4,9 @@ services:
   app:
     build:
       context: .
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=user
-      - MONGO_INITDB_ROOT_PASSWORD=password
-      - MONGO_INITDB_DATABASE=qwerty
-      - PORT=5000
-      - HOST=0.0.0.0
-      - DB_HOST=db
-      - DB_PORT=27017
+    env_file:
+      - .env
+      - db.env
     restart: on-failure
     volumes:
       - ./backend:/app
@@ -20,10 +15,8 @@ services:
       node app.js
   db:
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=user
-      - MONGO_INITDB_ROOT_PASSWORD=password
-      - MONGO_INITDB_DATABASE=qwerty
+    env_file:
+      - db.env
     ports:
       - "27018:27017"
     restart: on-failure

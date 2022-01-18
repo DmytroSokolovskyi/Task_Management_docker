@@ -7,7 +7,7 @@ const DB_PORT = process.env.DB_PORT;
 module.exports = {
     NODE_ENV: process.env.NODE_ENV || 'dev',
 
-    MONGO_URL:`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+    MONGO_URL:process.env.MONGO_URL || `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
     PORT: process.env.PORT || 5000,
     HOST: process.env.HOST || '0.0.0.0',
 
