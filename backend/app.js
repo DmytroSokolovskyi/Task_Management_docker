@@ -9,7 +9,7 @@ const {config, errorsEnum} = require('./configs');
 const {ErrorHandler} = require('./errors');
 const {authRouter, userRouter, taskRouter} = require('./routes');
 const {errorMiddleware} = require("./middlewares");
-const {HOST, PORT, ALLOWED_ORIGIN, NODE_ENV} = require("./configs/config");
+const { PORT, ALLOWED_ORIGIN, NODE_ENV, HOST} = require("./configs/config");
 const {defaultData} = require("./util");
 
 const app = express();
@@ -37,10 +37,9 @@ app.use('/user', userRouter);
 app.use('/task', taskRouter);
 app.use('*', errorMiddleware);
 
-app.listen(PORT,
-    HOST,
+app.listen(PORT, HOST,
     () => {
-        console.log(`App work ${PORT}`);
+        console.log(`App work ${PORT},   url - ${config.MONGO_URL}`);
         defaultData();
     });
 
