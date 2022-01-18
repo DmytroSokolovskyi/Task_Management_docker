@@ -1,13 +1,7 @@
-const DB_USER = process.env.MONGO_INITDB_ROOT_USERNAME;
-const DB_PASSWORD = process.env.MONGO_INITDB_ROOT_PASSWORD;
-const DB_NAME = process.env.MONGO_INITDB_DATABASE;
-const DB_HOST = process.env.DB_HOST;
-const DB_PORT = process.env.DB_PORT;
-
 module.exports = {
     NODE_ENV: process.env.NODE_ENV || 'dev',
 
-    MONGO_URL:process.env.MONGO_URL || `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+    MONGO_URL: process.env.MONGO_URL || 'mongodb://user:password@db:27017/qwerty',
     PORT: process.env.PORT || 5000,
     HOST: process.env.HOST || '0.0.0.0',
 

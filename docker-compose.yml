@@ -4,25 +4,25 @@ services:
   app:
     build:
       context: .
-    env_file:
-      - .env
-      - db.env
-    restart: on-failure
+    #    ports:
+    #      - "888:5000"
     volumes:
       - ./backend:/app
       - /app/node_modules
+    restart: on-failure
     command: >
       node app.js
   db:
     image: mongo
     env_file:
-      - db.env
+      - .env
+    restart: on-failure
     ports:
       - "27018:27017"
-    restart: on-failure
     volumes:
-      - ./mongo_db:/data/db
+      - ./mongo-db:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
   web:
     image: nginx:alpine
     ports:
