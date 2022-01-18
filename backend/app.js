@@ -9,12 +9,12 @@ const {config, errorsEnum} = require('./configs');
 const {ErrorHandler} = require('./errors');
 const {authRouter, userRouter, taskRouter} = require('./routes');
 const {errorMiddleware} = require("./middlewares");
-const {HOST, PORT, MONGO_URL, ALLOWED_ORIGIN, NODE_ENV} = require("./configs/config");
+const {HOST, PORT, ALLOWED_ORIGIN, NODE_ENV} = require("./configs/config");
 const {defaultData} = require("./util");
 
 const app = express();
 
-mongoose.connect(MONGO_URL);
+mongoose.connect("mongodb+srv://user:passwordQaz@cluster0.uewn9.mongodb.net/tasks");
 
 app.use(helmet());
 app.use(cors({origin: _configureCors}));
@@ -40,7 +40,6 @@ app.use('*', errorMiddleware);
 app.listen(PORT,
     HOST,
     () => {
-        console.log(HOST,PORT, MONGO_URL, ALLOWED_ORIGIN, NODE_ENV);
         console.log(`App work ${PORT}`);
         defaultData();
     });

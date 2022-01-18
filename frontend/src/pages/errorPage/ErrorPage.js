@@ -1,4 +1,4 @@
-import cl from "./ErrorPage.module.css";
+import cl from "./ErrorPage.module.scss";
 
 export default function ErrorPage () {
     return (

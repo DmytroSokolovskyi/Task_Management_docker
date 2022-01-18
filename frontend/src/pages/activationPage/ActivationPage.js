@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import MyLoader from "../../components/UI/myLoader/MyLoader";
 import {activate} from "../../services";
-import cl from "./ActivationPage.module.css";
+import cl from "./ActivationPage.module.scss";
 import {useEffect} from "react";
 import {useFetch} from "../../hooks";
 

@@ -11,16 +11,3 @@ export const destroyTokens = () => {
 export const getToken = (tokenName) => {
     return JSON.parse(localStorage.getItem(tokenName));
 };
-
-// export const getAuth = () => {
-//     return JSON.parse(localStorage.getItem("auth"));
-// };
-//
-// export const saveAuthToLocal = (user) => {
-//     localStorage.setItem("user", JSON.stringify(user));
-// };
-//
-// export const destroyAuthToLocal = () => {
-//     localStorage.removeItem("auth");
-//     localStorage.removeItem("user");
-// };

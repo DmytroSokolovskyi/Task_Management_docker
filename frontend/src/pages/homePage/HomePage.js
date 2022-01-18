@@ -1,6 +1,6 @@
 import Header from "../../components/ header/Header";
 import HomeRouter from "../../routing/HomeRouter";
-import cl from "./HomePage.module.css";
+import cl from "./HomePage.module.scss";
 
 export default function HomePage () {
     return (

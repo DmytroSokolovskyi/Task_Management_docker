@@ -15,16 +15,3 @@ export const logOut = () => {
 export const activate = (token) => {
     return axiosInstance.get(activateUrl + token);
 };
-
-// export const getRefresh = (refreshToken) => {
-//     const res = axiosInstance
-//         .get(authUrl + "/refresh", {
-//             headers: {
-//                 Authorization: `${refreshToken}`,
-//             },
-//         })
-//         .then(value => value.status)
-//         .catch(e => console.log(e));
-//
-//     return res;
-// };
